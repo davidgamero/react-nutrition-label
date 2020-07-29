@@ -7,9 +7,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-
-        <NutritionLabel fatGrams={10}></NutritionLabel>
-
+        <NutritionLabel
+          fatGrams={10}
+          servingSize={'1 cup (228g)'} />
       </header>
     </div>
   );
