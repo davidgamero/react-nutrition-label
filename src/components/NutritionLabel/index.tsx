@@ -32,20 +32,43 @@ const ServingInfo = styled.h2`
 const AmountPerServing = styled.h2`
   font-size: 8pt;
   font-weight: 700;
-  margin: 3pt;
+  margin: 1pt;
+  margin-bottom: 1pt;
 `
 
-const Calories = styled.h2`
+const CalorieRow = styled.div`
+  padding: 0;
+  margin: 0;
+  margin-top: 1pt;
+  margin-bottom: 1pt;
+  line-height: 8pt;
+  height: 8pt;
+`
+
+const CaloriesLabel = styled.h2`
   font-size: 8pt;
   font-weight: 700;
-  margin-left: 3pt;
-  display: inline;
+  margin: 0;
+  margin-left: 1pt;
+  float: left;
 `
 
 const CaloriesValue = styled.h2`
   font-size: 8pt;
   font-weight: 100;
-  display: inline;
+  margin: 0;
+  margin-left: 2pt;
+  float: left;
+`
+
+const CaloriesFromFat = styled.h2`
+  font-size: 8pt;
+  font-weight: 100;
+  display: inline-flex;
+  margin: 0;
+  margin-right: 1pt;
+  margin-left: auto;
+  float: right;
 `
 
 interface NutritionLabelProps {
@@ -75,17 +98,18 @@ const NutritionLabel: React.SFC<NutritionLabelProps> = (props: NutritionLabelPro
         {`Amount Per Serving ${props.amountPerServing}`}
       </AmountPerServing>
       <SeparatorBar height={'0.5pt'} color={props.backgroundColor} />
-      <span>
-        <Calories>
+      <CalorieRow>
+        <CaloriesLabel>
           {`Calories `}
-        </Calories>
+        </CaloriesLabel>
         <CaloriesValue>
           {props.calories}
         </CaloriesValue>
-      </span>
-      <ServingInfo>
-        {`Calories from Fat ${props.caloriesFromFat}`}
-      </ServingInfo>
+        <CaloriesFromFat>
+          {`Calories from Fat ${120}`}
+        </CaloriesFromFat>
+      </CalorieRow>
+      <SeparatorBar height={'3pt'} color={props.backgroundColor} />
       <ServingInfo>
         {`% Daily Value* ${props.percentDailyValue}`}
       </ServingInfo>
