@@ -29,6 +29,9 @@ interface NutritionLabelProps {
   servingSize: string,
   servingsPerContainer: string,
   amountPerServing: string,
+  calories: number,
+  caloriesFromFat: number,
+  percentDailyValue: string,
   backgroundColor?: string,
   //?=maybe for type
 }
@@ -45,6 +48,15 @@ const NutritionLabel: React.SFC<NutritionLabelProps> = (props: NutritionLabelPro
       </ServingInfo>
       <ServingInfo>
         {`Amount Per Serving ${props.amountPerServing}`}
+      </ServingInfo>
+      <ServingInfo>
+        {`Calories ${props.calories}`}
+      </ServingInfo>
+      <ServingInfo>
+        {`Calories from Fat ${props.caloriesFromFat}`}
+      </ServingInfo>
+      <ServingInfo>
+        {`% Daily Value* ${props.percentDailyValue}`}
       </ServingInfo>
       <h2> {props.fatGrams} </h2>
     </LabelContainer>
