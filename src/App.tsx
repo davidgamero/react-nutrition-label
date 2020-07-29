@@ -14,7 +14,7 @@ function App() {
           amountPerServing={''}
           calories={200}
           caloriesFromFat={120}
-          percentDailyValue={}
+          percentDailyValue={''}
         />
       </header>
     </div>
