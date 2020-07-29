@@ -12,18 +12,26 @@ const LabelContainer = styled.div<LabelContainerProps>`
   background-color: ${(props: LabelContainerProps) => (props.backgroundColor || 'white')};
   color: ${(props: LabelContainerProps) => (props.color || 'black')};
   font-family: 'helvetica';
-  padding: 1pt;
+  padding: 3pt;
   text-align: left;
 `
 
 const Title = styled.h1`
   font-size: 23pt;
+  font-weight: 900;
   margin: 0;
 `
 
 const ServingInfo = styled.h2`
   font-size: 8pt;
   font-weight: 400;
+  margin: 3pt;
+`
+
+const AmountPerServing = styled.h2`
+  font-size: 8pt;
+  font-weight: 700;
+  margin: 3pt;
 `
 
 interface NutritionLabelProps {
@@ -48,9 +56,11 @@ const NutritionLabel: React.SFC<NutritionLabelProps> = (props: NutritionLabelPro
       <ServingInfo>
         {`Servings Per Container ${props.servingsPerContainer}`}
       </ServingInfo>
-      <ServingInfo>
+      <SeparatorBar height={'7pt'} color={props.backgroundColor} />
+      <AmountPerServing>
         {`Amount Per Serving ${props.amountPerServing}`}
-      </ServingInfo>
+      </AmountPerServing>
+      <SeparatorBar height={'0.5pt'} color={props.backgroundColor} />
       <ServingInfo>
         {`Calories ${props.calories}`}
       </ServingInfo>
@@ -61,7 +71,6 @@ const NutritionLabel: React.SFC<NutritionLabelProps> = (props: NutritionLabelPro
         {`% Daily Value* ${props.percentDailyValue}`}
       </ServingInfo>
       <h2> {props.fatGrams} </h2>
-      <SeparatorBar height={'7pt'} color={props.backgroundColor} />
     </LabelContainer>
   )
 }
