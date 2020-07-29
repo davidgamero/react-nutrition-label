@@ -1,6 +1,8 @@
 import * as React from 'react'
 import styled from 'styled-components'
 
+import SeparatorBar from './SeparatorBar'
+
 interface LabelContainerProps {
   backgroundColor?: string,
   color?: string
@@ -16,7 +18,7 @@ const LabelContainer = styled.div<LabelContainerProps>`
 
 const Title = styled.h1`
   font-size: 23pt;
-  font-weight: 700;
+  margin: 0;
 `
 
 const ServingInfo = styled.h2`
@@ -43,6 +45,7 @@ const NutritionLabel: React.SFC<NutritionLabelProps> = (props: NutritionLabelPro
         {`Servings Per Container ${props.servingsPerContainer}`}
       </ServingInfo>
       <h2> {props.fatGrams} </h2>
+      <SeparatorBar height={'7pt'} color={props.backgroundColor} />
     </LabelContainer>
   )
 }
