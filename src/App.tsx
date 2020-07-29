@@ -11,6 +11,7 @@ function App() {
           fatGrams={10}
           servingSize={'1 cup (228g)'}
           servingsPerContainer={'16 crackers'}
+          amountPerServing={'Amount Per Serving'}
         />
       </header>
     </div>
