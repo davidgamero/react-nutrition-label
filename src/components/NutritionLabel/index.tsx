@@ -19,7 +19,7 @@ const LabelContainer = styled.div<LabelContainerProps>`
 const Title = styled.h1`
   font-size: 23pt;
   margin: 0;
-  font-family: 'Franklin Gothic';
+  font-family: 'Franklin Gothic Heavy';
 `
 
 const ServingInfo = styled.h2`
