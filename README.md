@@ -1,5 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+[Source document](https://www.fda.gov/media/81606/download) for FDA labels (page 35 is very useful)
+
 ## Available Scripts
 
 In the project directory, you can run:
