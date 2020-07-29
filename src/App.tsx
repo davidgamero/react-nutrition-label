@@ -9,7 +9,9 @@ function App() {
       <header className="App-header">
         <NutritionLabel
           fatGrams={10}
-          servingSize={'1 cup (228g)'} />
+          servingSize={'1 cup (228g)'}
+          servingsPerContainer={'16 crackers'}
+        />
       </header>
     </div>
   );

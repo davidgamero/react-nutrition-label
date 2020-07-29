@@ -27,15 +27,20 @@ const ServingInfo = styled.h2`
 interface NutritionLabelProps {
   fatGrams: number,
   servingSize: string,
+  servingsPerContainer: string,
   backgroundColor?: string,
+  //?=maybe for type
 }
 
 const NutritionLabel: React.SFC<NutritionLabelProps> = (props: NutritionLabelProps) => {
   return (
-    <LabelContainer>
+    <LabelContainer backgroundColor={props.backgroundColor}>
       <Title>Nutrition Facts </Title>
       <ServingInfo>
         {`Serving Size ${props.servingSize}`}
+      </ServingInfo>
+      <ServingInfo>
+        {`Servings Per Container ${props.servingsPerContainer}`}
       </ServingInfo>
       <h2> {props.fatGrams} </h2>
     </LabelContainer>
