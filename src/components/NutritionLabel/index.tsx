@@ -35,6 +35,19 @@ const AmountPerServing = styled.h2`
   margin: 3pt;
 `
 
+const Calories = styled.h2`
+  font-size: 8pt;
+  font-weight: 700;
+  margin-left: 3pt;
+  display: inline;
+`
+
+const CaloriesValue = styled.h2`
+  font-size: 8pt;
+  font-weight: 100;
+  display: inline;
+`
+
 interface NutritionLabelProps {
   fatGrams: number,
   servingSize: string,
@@ -62,9 +75,14 @@ const NutritionLabel: React.SFC<NutritionLabelProps> = (props: NutritionLabelPro
         {`Amount Per Serving ${props.amountPerServing}`}
       </AmountPerServing>
       <SeparatorBar height={'0.5pt'} color={props.backgroundColor} />
-      <ServingInfo>
-        {`Calories ${props.calories}`}
-      </ServingInfo>
+      <span>
+        <Calories>
+          {`Calories `}
+        </Calories>
+        <CaloriesValue>
+          {props.calories}
+        </CaloriesValue>
+      </span>
       <ServingInfo>
         {`Calories from Fat ${props.caloriesFromFat}`}
       </ServingInfo>
