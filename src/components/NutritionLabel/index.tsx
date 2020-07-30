@@ -26,7 +26,9 @@ const Title = styled.h1`
 const ServingInfo = styled.h2`
   font-size: 8pt;
   font-weight: 400;
-  margin: 3pt;
+  margin: 1pt;
+  margin-left: 1pt;
+  margin-bottom: 2pt;
 `
 
 const AmountPerServing = styled.h2`
@@ -71,6 +73,16 @@ const CaloriesFromFat = styled.h2`
   float: right;
 `
 
+const PercentDailyValueLabel = styled.h2`
+  line-height: 6pt;
+  font-size: 6pt;
+  font-weight: 100;
+  text-align: right;
+  margin: 0;
+  margin-top: 2pt;
+  margin-bottom: 5pt;
+`
+
 interface NutritionLabelProps {
   fatGrams: number,
   servingSize: string,
@@ -110,9 +122,10 @@ const NutritionLabel: React.SFC<NutritionLabelProps> = (props: NutritionLabelPro
         </CaloriesFromFat>
       </CalorieRow>
       <SeparatorBar height={'3pt'} color={props.backgroundColor} />
-      <ServingInfo>
+      <PercentDailyValueLabel>
         {`% Daily Value* ${props.percentDailyValue}`}
-      </ServingInfo>
+      </PercentDailyValueLabel>
+      <SeparatorBar height={'0.5pt'} color={props.backgroundColor} />
       <h2> {props.fatGrams} </h2>
     </LabelContainer>
   )
