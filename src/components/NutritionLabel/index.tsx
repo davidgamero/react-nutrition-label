@@ -2,6 +2,9 @@ import * as React from 'react'
 import styled from 'styled-components'
 
 import SeparatorBar from './SeparatorBar'
+import NutrientRow from './NutrientRow'
+
+const NUTRIENT_INDENT = '4pt';
 
 interface LabelContainerProps {
   backgroundColor?: string,
@@ -122,10 +125,20 @@ const NutritionLabel: React.SFC<NutritionLabelProps> = (props: NutritionLabelPro
         </CaloriesFromFat>
       </CalorieRow>
       <SeparatorBar height={'3pt'} color={props.backgroundColor} />
+
       <PercentDailyValueLabel>
         {`% Daily Value* ${props.percentDailyValue}`}
       </PercentDailyValueLabel>
       <SeparatorBar height={'0.5pt'} color={props.backgroundColor} />
+      <NutrientRow label={'Saturated Fat'} value={'5g'} boldLabel={true} />
+      <NutrientRow label={'Saturated Fat'} value={'5g'} boldLabel={false} indent={NUTRIENT_INDENT} />
+      <NutrientRow label={'Trans Fat'} value={'2g'} boldLabel={false} indent={NUTRIENT_INDENT} />
+      <NutrientRow label={'Cholesterol'} value={'30mg'} boldLabel={true} />
+      <NutrientRow label={'Sodium'} value={'660mg'} boldLabel={true} />
+
+      <SeparatorBar height={'5pt'} color={props.backgroundColor} />
+      <NutrientRow hideBar={true} label={'Vitamin A'} value={'4%'} />
+
       <h2> {props.fatGrams} </h2>
     </LabelContainer>
   )
