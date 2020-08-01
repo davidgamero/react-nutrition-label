@@ -19,6 +19,7 @@ function App() {
           transFat={1}
           cholesterol={8}
           sodium={200}
+          totalCarbohydrate={'300mg'}
           saturatedFat={6}
         />
       </header>

@@ -99,6 +99,7 @@ interface NutritionLabelProps {
   transFat: number,
   cholesterol: number,
   sodium: number,
+  totalCarbohydrate: string,
   backgroundColor?: string,
   //?=maybe for type
 }
@@ -129,6 +130,9 @@ const NutritionLabel: React.SFC<NutritionLabelProps> = (props: NutritionLabelPro
           {`Calories from Fat ${120}`}
         </CaloriesFromFat>
       </CalorieRow>
+      <ServingInfo>
+        {`Total Carbohydrate${props.totalCarbohydrate}`}
+      </ServingInfo>
       <SeparatorBar height={'3pt'} color={props.backgroundColor} />
 
       <PercentDailyValueLabel>
