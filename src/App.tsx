@@ -15,6 +15,11 @@ function App() {
           calories={200}
           caloriesFromFat={120}
           percentDailyValue={''}
+          totalFat={10}
+          transFat={1}
+          cholesterol={8}
+          sodium={200}
+          saturatedFat={6}
         />
       </header>
     </div>

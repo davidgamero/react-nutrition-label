@@ -94,6 +94,11 @@ interface NutritionLabelProps {
   calories: number,
   caloriesFromFat: number,
   percentDailyValue: string,
+  totalFat: number,
+  saturatedFat: number,
+  transFat: number,
+  cholesterol: number,
+  sodium: number,
   backgroundColor?: string,
   //?=maybe for type
 }
@@ -130,11 +135,11 @@ const NutritionLabel: React.SFC<NutritionLabelProps> = (props: NutritionLabelPro
         {`% Daily Value* ${props.percentDailyValue}`}
       </PercentDailyValueLabel>
       <SeparatorBar height={'0.5pt'} color={props.backgroundColor} />
-      <NutrientRow label={'Saturated Fat'} value={'5g'} boldLabel={true} />
-      <NutrientRow label={'Saturated Fat'} value={'5g'} boldLabel={false} indent={NUTRIENT_INDENT} />
-      <NutrientRow label={'Trans Fat'} value={'2g'} boldLabel={false} indent={NUTRIENT_INDENT} />
-      <NutrientRow label={'Cholesterol'} value={'30mg'} boldLabel={true} />
-      <NutrientRow label={'Sodium'} value={'660mg'} boldLabel={true} />
+      <NutrientRow label={'Total Fat'} value={`${props.totalFat}g`} boldLabel={true} />
+      <NutrientRow label={'Saturated Fat'} value={`${props.saturatedFat}g`} boldLabel={false} indent={NUTRIENT_INDENT} />
+      <NutrientRow label={'Trans Fat'} value={`${props.transFat}g`} boldLabel={false} indent={NUTRIENT_INDENT} />
+      <NutrientRow label={'Cholesterol'} value={`${props.cholesterol}g`} boldLabel={true} />
+      <NutrientRow label={'Sodium'} value={`${props.sodium}mg`} boldLabel={true} />
 
       <SeparatorBar height={'5pt'} color={props.backgroundColor} />
       <NutrientRow hideBar={true} label={'Vitamin A'} value={'4%'} />
