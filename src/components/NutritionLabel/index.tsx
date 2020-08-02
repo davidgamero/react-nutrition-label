@@ -87,38 +87,42 @@ const PercentDailyValueLabel = styled.h2`
 `
 
 interface NutritionLabelProps {
-  fatGrams: number,
+  backgroundColor?: string,
   servingSize: string,
   servingsPerContainer: string,
-  amountPerServing: string,
   calories: number,
   caloriesFromFat: number,
-  percentDailyValue: string,
   totalFat: number,
   saturatedFat: number,
   transFat: number,
   cholesterol: number,
   sodium: number,
-  totalCarbohydrate: string,
-  backgroundColor?: string,
+  totalCarbohydrate: number,
+  dietaryFiber: number,
+  sugars: number,
+  protein: number
   //?=maybe for type
 }
 
 const NutritionLabel: React.SFC<NutritionLabelProps> = (props: NutritionLabelProps) => {
   return (
     <LabelContainer backgroundColor={props.backgroundColor}>
-      <Title>Nutrition Facts </Title>
+      <Title>Nutrition Facts</Title>
       <ServingInfo>
         {`Serving Size ${props.servingSize}`}
       </ServingInfo>
       <ServingInfo>
         {`Servings Per Container ${props.servingsPerContainer}`}
       </ServingInfo>
+
       <SeparatorBar height={'7pt'} color={props.backgroundColor} />
+
       <AmountPerServing>
-        {`Amount Per Serving ${props.amountPerServing}`}
+        {`Amount Per Serving`}
       </AmountPerServing>
+
       <SeparatorBar height={'0.5pt'} color={props.backgroundColor} />
+
       <CalorieRow>
         <CaloriesLabel>
           {`Calories `}
@@ -130,25 +134,27 @@ const NutritionLabel: React.SFC<NutritionLabelProps> = (props: NutritionLabelPro
           {`Calories from Fat ${120}`}
         </CaloriesFromFat>
       </CalorieRow>
-      <ServingInfo>
-        {`Total Carbohydrate${props.totalCarbohydrate}`}
-      </ServingInfo>
+
       <SeparatorBar height={'3pt'} color={props.backgroundColor} />
 
       <PercentDailyValueLabel>
-        {`% Daily Value* ${props.percentDailyValue}`}
+        {`% Daily Value*`}
       </PercentDailyValueLabel>
+
       <SeparatorBar height={'0.5pt'} color={props.backgroundColor} />
+
       <NutrientRow label={'Total Fat'} value={`${props.totalFat}g`} boldLabel={true} />
       <NutrientRow label={'Saturated Fat'} value={`${props.saturatedFat}g`} boldLabel={false} indent={NUTRIENT_INDENT} />
       <NutrientRow label={'Trans Fat'} value={`${props.transFat}g`} boldLabel={false} indent={NUTRIENT_INDENT} />
       <NutrientRow label={'Cholesterol'} value={`${props.cholesterol}g`} boldLabel={true} />
       <NutrientRow label={'Sodium'} value={`${props.sodium}mg`} boldLabel={true} />
+      <NutrientRow label={'Total Carbohydrate'} value={`${props.totalCarbohydrate}mg`} boldLabel={true} />
+      <NutrientRow label={'Dietary Fiber'} value={`${props.dietaryFiber}g`} boldLabel={false} indent={NUTRIENT_INDENT} />
+      <NutrientRow label={'Sugars'} value={`${props.sugars}g`} boldLabel={false} indent={NUTRIENT_INDENT} />
+      <NutrientRow label={'Protein'} value={`${props.protein}g`} boldLabel={true} />
 
       <SeparatorBar height={'5pt'} color={props.backgroundColor} />
       <NutrientRow hideBar={true} label={'Vitamin A'} value={'4%'} />
-
-      <h2> {props.fatGrams} </h2>
     </LabelContainer>
   )
 }

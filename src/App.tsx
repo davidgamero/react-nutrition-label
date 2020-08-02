@@ -8,19 +8,19 @@ function App() {
     <div className="App">
       <header className="App-header">
         <NutritionLabel
-          fatGrams={10}
           servingSize={'1 cup (228g)'}
           servingsPerContainer={'16 crackers'}
-          amountPerServing={''}
           calories={200}
           caloriesFromFat={120}
-          percentDailyValue={''}
           totalFat={10}
+          saturatedFat={6}
           transFat={1}
           cholesterol={8}
           sodium={200}
-          totalCarbohydrate={'300mg'}
-          saturatedFat={6}
+          totalCarbohydrate={300}
+          dietaryFiber={0}
+          sugars={5}
+          protein={5}
         />
       </header>
     </div>
