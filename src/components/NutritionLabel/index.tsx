@@ -17,7 +17,7 @@ const LabelContainer = styled.div<LabelContainerProps>`
   font-family: 'helvetica';
   padding: 3pt;
   text-align: left;
-  width: 200pt; 
+  width: 165pt; 
 `
 // #TODO add a prop to adjust width
 
