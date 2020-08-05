@@ -17,8 +17,9 @@ const LabelContainer = styled.div<LabelContainerProps>`
   font-family: 'helvetica';
   padding: 3pt;
   text-align: left;
-  width: 200pt;
+  width: 200pt; 
 `
+// #TODO add a prop to adjust width
 
 const Title = styled.h1`
   font-size: 23pt;
