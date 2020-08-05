@@ -17,6 +17,7 @@ const LabelContainer = styled.div<LabelContainerProps>`
   font-family: 'helvetica';
   padding: 3pt;
   text-align: left;
+  width: 200pt;
 `
 
 const Title = styled.h1`
@@ -81,6 +82,15 @@ const PercentDailyValueLabel = styled.h2`
   font-size: 6pt;
   font-weight: 100;
   text-align: right;
+  margin: 0;
+  margin-top: 2pt;
+  margin-bottom: 5pt;
+`
+const DailyValues = styled.h2`
+  line-height: 6pt;
+  font-size: 6pt;
+  font-weight: 100;
+  text-align: left;
   margin: 0;
   margin-top: 2pt;
   margin-bottom: 5pt;
@@ -160,6 +170,10 @@ const NutritionLabel: React.SFC<NutritionLabelProps> = (props: NutritionLabelPro
           <NutrientRow hideBar={true} label={vitaminString} value={''} />
       )
       }
+      <DailyValues>
+        {'* Percent Daily Values are based on a 2,000 calorie diet. Your Daily Values may be higher or lower depending on your calorie needs:'}
+      </DailyValues>
+
     </LabelContainer>
   )
 }
