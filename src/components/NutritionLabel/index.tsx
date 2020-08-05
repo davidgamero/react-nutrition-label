@@ -168,7 +168,7 @@ const NutritionLabel: React.SFC<NutritionLabelProps> = (props: NutritionLabelPro
       <SeparatorBar height={'5pt'} color={props.backgroundColor} />
       {props.vitamins.map(
         (vitaminString: string) =>
-          <NutrientRow hideBar={true} label={vitaminString} value={''} />
+          <NutrientRow hideBar={false} label={vitaminString} value={''} />
       )
       }
       <DailyValues>
