@@ -100,7 +100,8 @@ interface NutritionLabelProps {
   totalCarbohydrate: number,
   dietaryFiber: number,
   sugars: number,
-  protein: number
+  protein: number,
+  vitamins: Array<string>,
   //?=maybe for type
 }
 
@@ -154,7 +155,11 @@ const NutritionLabel: React.SFC<NutritionLabelProps> = (props: NutritionLabelPro
       <NutrientRow label={'Protein'} value={`${props.protein}g`} boldLabel={true} />
 
       <SeparatorBar height={'5pt'} color={props.backgroundColor} />
-      <NutrientRow hideBar={true} label={'Vitamin A'} value={'4%'} />
+      {props.vitamins.map(
+        (vitaminString: string) =>
+          <NutrientRow hideBar={true} label={vitaminString} value={''} />
+      )
+      }
     </LabelContainer>
   )
 }

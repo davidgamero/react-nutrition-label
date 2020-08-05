@@ -21,6 +21,7 @@ function App() {
           dietaryFiber={0}
           sugars={5}
           protein={5}
+          vitamins={['Vitamin D 2%', 'Vitamin A 7%', 'Iron 4%']}
         />
       </header>
     </div>

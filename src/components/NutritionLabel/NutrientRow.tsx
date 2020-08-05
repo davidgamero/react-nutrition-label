@@ -33,7 +33,7 @@ const NutrientText = styled.p<NutrientTextProps>`
 
 interface NutrientRowProps {
   label: string;
-  value: string;
+  value?: string;
   hideBar?: boolean;
   color?: string;
   boldLabel?: boolean;
